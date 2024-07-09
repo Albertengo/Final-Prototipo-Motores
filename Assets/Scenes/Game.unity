@@ -188,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 62337338}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7085876, y: 1.6575723, z: -9.57}
+  m_LocalPosition: {x: 5.7704134, y: 1.6575723, z: -9.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -283,7 +283,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7085876, y: 1.6575723, z: -9.57}
+  m_LocalPosition: {x: 5.7704134, y: 1.6575723, z: -9.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 0
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
@@ -646,6 +646,7 @@ GameObject:
   - component: {fileID: 1426367806}
   - component: {fileID: 1426367805}
   - component: {fileID: 1426367810}
+  - component: {fileID: 1426367811}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -678,8 +679,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
+  m_Constraints: 80
+  m_CollisionDetection: 1
 --- !u!136 &1426367806
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -781,8 +782,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7ae492a9ee9b348ba4fd5be891726b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 1426367805}
   speed: 4
-  jumpHeight: 10
+  jumpHeight: 400
+  isGrounded: 0
+--- !u!114 &1426367811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426367804}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9d85c1c6769014090b6bb4647a7e02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  speed: 0
+  jumpHeight: 1
   isGrounded: 0
 --- !u!1 &1459473987
 GameObject:
