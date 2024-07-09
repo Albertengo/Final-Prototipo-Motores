@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMov : MonoBehaviour
 {
+    //NOTA: PLAYER NO SE MUEVE, se queda en el lugar mientras el mapa se mueve a su alrededor.
+
     [SerializeField] private Rigidbody rb;
     [SerializeField] private int speed;
 
     public float jumpHeight = 1.0f;
     public bool isGrounded;
+    public UnityEvent AttackingEnemy;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
