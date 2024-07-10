@@ -39,7 +39,7 @@ public class PlayerMov : MonoBehaviour
                 isGrounded = false;
                 Debug.Log("Estas saltando");
             }
-            Debug.Log("Estas en el piso");
+            //Debug.Log("Estas en el piso");
         }
 
         

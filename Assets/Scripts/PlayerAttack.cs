@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class PlayerAttack : MonoBehaviour
 {
+    //NOTA: por alguna razón desde el inspector se marca que ataca dos veces.
+
     public GameManager AttackEvent;
     //particle system?
     //combo system ?
@@ -22,6 +24,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
+        Debug.Log("Attacking");
         //código de ataque c/ particle system
     }
 }
