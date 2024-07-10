@@ -414,8 +414,8 @@ MonoBehaviour:
   enemies: []
   SpawnPosition: {fileID: 0}
   "l\xEDmiteEnemigos": 1
-  TArranque: 0
-  Repeticion: 0
+  TArranque: 4
+  Repeticion: 1
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,8 +677,8 @@ MonoBehaviour:
   enemies: []
   SpawnPosition: {fileID: 0}
   "l\xEDmiteEnemigos": 3
-  TArranque: 0
-  Repeticion: 0
+  TArranque: 2
+  Repeticion: 3
 --- !u!1 &1026236943
 GameObject:
   m_ObjectHideFlags: 0
