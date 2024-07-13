@@ -26,9 +26,9 @@ public class PlayerMov : MonoBehaviour
 
     private void Movement()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
+        //float horizontalInput = Input.GetAxis("Horizontal");
         //float verticalInput = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(horizontalInput, 0f, 0f); // verticalInput);
+        Vector3 movement = new Vector3(0f, 0f, 0f); // verticalInput);
 
         if (isGrounded == true) //mientras estes en el piso, se podra saltar, es para evitar volar
         {
@@ -46,7 +46,7 @@ public class PlayerMov : MonoBehaviour
 
         movement.Normalize();
 
-        transform.Translate(movement * Time.deltaTime * speed); //para moverse a los costados segun el player
+        transform.Translate(movement * Time.deltaTime * speed); //para moverse segun el player
     }
     private void OnCollisionEnter(Collision collision)
     {

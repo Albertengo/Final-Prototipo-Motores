@@ -97,7 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ba3cc987822034f856629a4662692d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainCamera: {fileID: 0}
+  _mainCamera: {fileID: 265101829206994144, guid: 1793219d874ffd94b9ae52945e67f08d,
+    type: 3}
 --- !u!1 &5700019228873366842
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,3 +249,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  Tvivo: 0
+  TMAXvida: 20
