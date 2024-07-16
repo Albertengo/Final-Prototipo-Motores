@@ -13,6 +13,8 @@ public class PlayerMov : MonoBehaviour
     public float jumpHeight = 1.0f;
     public bool isGrounded;
     public UnityEvent AttackingEnemy;
+
+    public static int Coins;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -53,6 +55,15 @@ public class PlayerMov : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Coin"))
+        {
+            Debug.Log("MONEDA RECOGIDA");
+            Coins++;
         }
     }
 }

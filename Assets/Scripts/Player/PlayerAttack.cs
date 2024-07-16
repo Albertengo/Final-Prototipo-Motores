@@ -8,6 +8,8 @@ public class PlayerAttack : MonoBehaviour
     //NOTA: por alguna razón desde el inspector se marca que ataca dos veces.
 
     public GameManager AttackEvent;
+    public Enemies Enemigo;
+    //bool enemyIsNear;
 
     Renderer _renderer;
     Material Material;
@@ -32,6 +34,8 @@ public class PlayerAttack : MonoBehaviour
     public void Attack()
     {
         Debug.Log("Attacking");
+        Enemigo.recibirDaño(1); // enemigo recibe daño apenas spawnea y el player hace click, capaz resolverlo con  booleano??
+        
         //código de ataque c/ particle system
     }
 

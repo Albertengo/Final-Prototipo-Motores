@@ -251,3 +251,6 @@ MonoBehaviour:
   speed: 3
   Tvivo: 0
   TMAXvida: 20
+  Life: 1
+  Drops:
+  - {fileID: 4740321602149259397, guid: 146ecd45828b24544a44b6e719b432b8, type: 3}
