@@ -492,6 +492,7 @@ MonoBehaviour:
       m_Calls: []
   Text_Coins: {fileID: 1925129115}
   Time_Slider: {fileID: 437228343}
+  Tiempo_Juego: 20
 --- !u!4 &671449190
 Transform:
   m_ObjectHideFlags: 0
@@ -2019,7 +2020,7 @@ PrefabInstance:
     - target: {fileID: 4980131690511529909, guid: 146ecd45828b24544a44b6e719b432b8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.52
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 4980131690511529909, guid: 146ecd45828b24544a44b6e719b432b8,
         type: 3}

@@ -42,12 +42,12 @@ public class Enemies : MonoBehaviour
             Spawner.spawneados--;
         }
     }
-    public void recibirDaño(int daño)
+    public void recibirDaño()//(int daño)
     {
-        Life = Life - daño;
+        Life = Life - 1;//daño;
         if (Life <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             //MECANICA PARA CONTAR COMBO'???
             Loot();
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     public UnityEvent AttackOnClick;
     public TextMeshProUGUI Text_Coins;
     public Slider Time_Slider;
+    public int Tiempo_Juego;
+    bool Permitido_Atacar;
     void Start()
     {
         StartGame();
@@ -18,7 +21,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) //&& Permitido_Atacar == true)
             AttackOnClick.Invoke();
         Text_Coins.text = "Coins: " + PlayerMov.Coins;
 
@@ -30,24 +33,25 @@ public class GameManager : MonoBehaviour
 
     #region Code
     void StartGame()
-        {
-            StartCoroutine(Cronometro(20));
-        }
+    {
+        StartCoroutine(Cronometro(Tiempo_Juego));
+    }
 
-        public IEnumerator Cronometro(float valorCronometro = 20)
+    public IEnumerator Cronometro(float valorCronometro)
+    {
+        Time_Slider.value = valorCronometro;
+        while (Time_Slider.value > 0)
         {
-            Time_Slider.value = valorCronometro;
-            while (Time_Slider.value > 0)
-            {
-                yield return new WaitForSeconds(1.0f);
-                Time_Slider.value--;
-            }
+            yield return new WaitForSeconds(1.0f);
+            Time_Slider.value--;
         }
+     }
 
-        void TiempoTerminado()
-        {
-            Debug.Log("GAMEOVER.");
-        }
+    void TiempoTerminado()
+    {
+       Debug.Log("GAMEOVER.");
+        SceneManager.LoadScene("EndGame");
+    }
 }
 #endregion
 

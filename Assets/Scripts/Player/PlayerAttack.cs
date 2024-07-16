@@ -34,11 +34,22 @@ public class PlayerAttack : MonoBehaviour
     public void Attack()
     {
         Debug.Log("Attacking");
-        Enemigo.recibirDaño(1); // enemigo recibe daño apenas spawnea y el player hace click, capaz resolverlo con  booleano??
+        Enemigo.recibirDaño(); // enemigo recibe daño apenas spawnea y el player hace click, capaz resolverlo con  booleano??
+        //Enemigo.recibirDaño(1); // enemigo recibe daño apenas spawnea y el player hace click, capaz resolverlo con  booleano??
         
         //código de ataque c/ particle system
     }
 
-    
+    //void Attack2()
+    //{
+    //    Collider[] hitBox = Physics.OverlapSphere(ultimateHitBox.transform.position, ultimateRange, enemy);
+
+    //    foreach (var box in hitBox)
+    //    {
+    //        box.GetComponent<EnemyController>().die();
+    //    }
+    //}
+
+
 
 }
