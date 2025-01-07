@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
+    //NOTA: hacer que la loot sea hijo del enemy para que siga moviendose despues de que se muera el enemigo y no se quede en el piso nomas
+    // (para dar la ilusion de que el personaje se sigue moviendo y no está estático)
+
     [Header("Enemy properties")]
     [SerializeField] float speed;
     [Header("Spawn properties")]
