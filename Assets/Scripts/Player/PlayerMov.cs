@@ -50,6 +50,7 @@ public class PlayerMov : MonoBehaviour
 
         transform.Translate(movement * Time.deltaTime * speed); //para moverse segun el player
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -60,7 +61,7 @@ public class PlayerMov : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Coin"))
+        if (other.CompareTag("" + "Coin")) //("" + "Coin"))
         {
             Debug.Log("MONEDA RECOGIDA");
             Coins++;

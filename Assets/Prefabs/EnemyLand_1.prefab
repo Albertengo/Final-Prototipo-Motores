@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4244078361193205365}
   - component: {fileID: 738477834281215409}
   - component: {fileID: 8057581424502737012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 1144242135903171879}
   - component: {fileID: 6330277226090015315}
   - component: {fileID: 7359719759081806350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyLand_1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
