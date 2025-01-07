@@ -13,17 +13,14 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI Text_Coins;
     public Slider Time_Slider;
     public int Tiempo_Juego;
-    bool Permitido_Atacar;
+    //bool Permitido_Atacar;
     void Start()
     {
         StartGame();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //if (Input.GetMouseButtonDown(0)) //&& Permitido_Atacar == true)
-            //AttackOnClick.Invoke();
         Text_Coins.text = "Coins: " + PlayerMov.Coins;
 
         if (Time_Slider.value == 0) //si el tiempo llega a 0, gameover.
