@@ -16,9 +16,10 @@ public class PlayerAttack : MonoBehaviour
     //public int DetectionRange = 2;
     public LayerMask Enemies_Layer;
     public bool detected;
-    private InputActionReference Attack_Input;
+    [SerializeField] InputActionReference Attack_Input;
     //public Enemies Enemigo;
     GameObject Enemigo;
+    public DetectionRange Detection;
 
     //bool enemyIsNear;
 
@@ -26,10 +27,11 @@ public class PlayerAttack : MonoBehaviour
     Material Material;
     //particle system?
     //combo system ?
-
+    
     void Start()
     {
-        AttackEvent.AttackOnClick.AddListener(Attack); //cambiar x input system pq no parece estar funcionando bien con esto
+        //AttackEvent.AttackOnClick.AddListener(Attack); //cambiar x input system pq no parece estar funcionando bien con esto
+        Attack_Input.action.performed += Attack;
     }
 
     // Update is called once per frame
@@ -43,18 +45,11 @@ public class PlayerAttack : MonoBehaviour
         //_renderer.material.mainTexture.
     }
 
-    public void Attack() //necesito q detecte a los enemigos y sus scripts
+    private void Attack(InputAction.CallbackContext obj) //necesito q detecte a los enemigos y sus scripts
     {
-        float distance = UnityEngine.Vector3.Distance(transform.position, Enemigo.transform.localPosition);
-        if (detected == true) //distance < DetectionRange)//Enemigo.GetComponent<DetectionRange>()) //var distance = Vector3.Distance(objectOne, objectTwo); //agregar condicion para detectar distancia entre enemigo y player, si están cerca, se ejecuta esto
-        {
-            Debug.Log("Attacking");
-            GetComponent<DetectionRange>().EnemyDetected();
-            //Enemigo.GetComponent<Enemies>().recibirDaño(); // enemigo recibe daño apenas spawnea y el player hace click, capaz resolverlo con  booleano??
-                                   //Enemigo.recibirDaño(1); // enemigo recibe daño apenas spawnea y el player hace click, capaz resolverlo con  booleano??
-            detected = false;
-        }
-
+        Debug.Log("Attacking");
+        //GetComponent<DetectionRange>().EnemyDetected();
+        Detection.EnemyDetected();
         //código de ataque c/ particle system
     }
 

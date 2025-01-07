@@ -188,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 62337338}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8542938, y: 1.6575723, z: -9.57}
+  m_LocalPosition: {x: 3.8795729, y: 1.6575723, z: -9.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -592,9 +592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977e42edb88b0d54a8c9a687a5dcae0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackOnClick:
-    m_PersistentCalls:
-      m_Calls: []
   Text_Coins: {fileID: 1925129115}
   Time_Slider: {fileID: 437228343}
   Tiempo_Juego: 20
@@ -1518,9 +1515,6 @@ MonoBehaviour:
   speed: 4
   jumpHeight: 400
   isGrounded: 0
-  AttackingEnemy:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1426367812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1538,6 +1532,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   detected: 0
+  Detection: {fileID: 1426367813}
 --- !u!114 &1426367813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2177,7 +2172,7 @@ PrefabInstance:
     - target: {fileID: 7033457986107679820, guid: 1793219d874ffd94b9ae52945e67f08d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8542938
+      value: 3.8795729
       objectReference: {fileID: 0}
     - target: {fileID: 7033457986107679820, guid: 1793219d874ffd94b9ae52945e67f08d,
         type: 3}

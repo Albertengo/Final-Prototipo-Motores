@@ -12,7 +12,7 @@ public class PlayerMov : MonoBehaviour
 
     public float jumpHeight = 1.0f;
     public bool isGrounded;
-    public UnityEvent AttackingEnemy;
+    //public UnityEvent AttackingEnemy;
 
     public static int Coins;
     void Start()
