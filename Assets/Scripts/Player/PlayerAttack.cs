@@ -9,6 +9,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
+    //NOTA: capaz agregar un cooldown?
+
     public LayerMask Enemies_Layer;
     [SerializeField] InputActionReference Attack_Input;
     public DetectionRange Detection;

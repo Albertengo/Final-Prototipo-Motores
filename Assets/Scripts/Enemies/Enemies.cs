@@ -8,7 +8,7 @@ public class Enemies : MonoBehaviour
 {
     //NOTA: hacer que la loot sea hijo del enemy para que siga moviendose despues de que se muera el enemigo y no se quede en el piso nomas
     // (para dar la ilusion de que el personaje se sigue moviendo y no está estático)
-    //NOTA2: usar el trigger dentro del prefab enemigo para que colisione con el player y sacarle vida
+    //NOTA2: usar el trigger dentro del prefab enemigo para que colisione con el player y sacarle vida si el player no llega a matarlo
 
     [Header("Enemy properties")]
     [SerializeField] float speed;
@@ -24,6 +24,7 @@ public class Enemies : MonoBehaviour
     [Header("Enemy Loot")]
     public int Life = 1;
     public GameObject[] Drops;
+    public bool enemyKilled;
     //public static int Kills;
 
     void Start()
@@ -58,9 +59,11 @@ public class Enemies : MonoBehaviour
             //Destroy(gameObject);
             fx.SetActive(false);
             meshRenderer.enabled = false;
+            
             Debug.Log("enemigo desactivado");
             //MECANICA PARA CONTAR COMBO'???
             Loot();
+            enemyKilled = true;
         }
     }
     public void Loot()

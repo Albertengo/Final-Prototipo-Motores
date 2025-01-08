@@ -8,11 +8,14 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    //NOTA: agregar una mecanica de agregar tiempo cada vez que muere un enemigo y si no agregar directamente vidas...
+
     //public UnityEvent AttackOnClick;
     
     public TextMeshProUGUI Text_Coins;
     public Slider Time_Slider;
     public int Tiempo_Juego;
+    public Enemies Enemy_Script;
     //bool Permitido_Atacar;
     void Start()
     {
@@ -22,6 +25,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         Text_Coins.text = "Coins: " + PlayerMov.Coins;
+
+        //AgregarTiempo();
 
         if (Time_Slider.value == 0) //si el tiempo llega a 0, gameover.
         {
@@ -50,6 +55,17 @@ public class GameManager : MonoBehaviour
        Debug.Log("GAMEOVER.");
         SceneManager.LoadScene("EndGame");
     }
+
+    /*
+    void AgregarTiempo()
+    {
+        if (Enemy_Script.enemyKilled == true)
+        {
+            Tiempo_Juego = Tiempo_Juego + 5;
+            Enemy_Script.enemyKilled = false;
+        }
+    }
+    */
 }
 #endregion
 
