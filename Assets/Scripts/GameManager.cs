@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI Text_Coins;
     public Slider Time_Slider;
     public int Tiempo_Juego;
-    public Enemies Enemy_Script;
+    //public Enemies Enemy_Script;
     //bool Permitido_Atacar;
     void Start()
     {
@@ -56,16 +56,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("EndGame");
     }
 
-    /*
-    void AgregarTiempo()
+
+    public void AgregarTiempo(float tiempoExtra)
     {
-        if (Enemy_Script.enemyKilled == true)
-        {
-            Tiempo_Juego = Tiempo_Juego + 5;
-            Enemy_Script.enemyKilled = false;
-        }
+        Time_Slider.value += tiempoExtra;
+        Debug.Log("Tiempo agregado: " + tiempoExtra + " segundos.");
     }
-    */
+
+    #endregion
 }
-#endregion
+
 

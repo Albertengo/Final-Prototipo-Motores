@@ -15,8 +15,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] InputActionReference Attack_Input;
     public DetectionRange Detection;
 
-    //bool enemyIsNear;
-
     Renderer _renderer;
     Material Material;
     //particle system?

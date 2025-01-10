@@ -12,6 +12,7 @@ public class Enemies : MonoBehaviour
     //NOTA2: usar el trigger dentro del prefab enemigo para que colisione con el player y sacarle vida si el player no llega a matarlo
 
     [Header("Enemy properties")]
+    public int Life = 1;
     [SerializeField] float speed;
     [SerializeField] GameObject fx;
 
@@ -20,13 +21,14 @@ public class Enemies : MonoBehaviour
     [Header("Spawn properties")]
     public float Tvivo = 0f;
     public float TMAXvida = 20f;
-    //public static int enemyKills;
 
     [Header("Enemy Loot")]
-    public int Life = 1;
     public GameObject[] Drops;
     public bool enemyKilled;
     //public static int Kills;
+
+    //[Header("Extra")]
+    //[SerializeField] GameManager gameManager;
 
     void Start()
     {
@@ -60,8 +62,9 @@ public class Enemies : MonoBehaviour
             //Destroy(gameObject);
             fx.SetActive(false);
             meshRenderer.enabled = false;
-            
-            Debug.Log("enemigo desactivado");
+            SliderTiempo();
+            //Spawner.spawneados--;
+
             //MECANICA PARA CONTAR COMBO'???
             Loot();
             enemyKilled = true;
@@ -72,9 +75,16 @@ public class Enemies : MonoBehaviour
         //Vector2 position = transform.position; //chequea la posicion
         int dropsIndex = Random.Range(0, Drops.Length); //randomiza la loot
         GameObject loot = Drops[dropsIndex];
-        //this.transform.parent = loot.transform;
-        //Instantiate(loot, position, Quaternion.identity); //instancia loot a recolectar
         Instantiate(loot, this.gameObject.transform); //instancia loot a recolectar
-        //loot.transform.SetParent(this.gameObject.transform, true);
+        //Instantiate(loot, position, Quaternion.identity);
+    }
+
+    void SliderTiempo()
+    {
+        //if (GetComponent<GameManager>() != null)
+        //{
+            GetComponent<GameManager>()?.AgregarTiempo(5);
+        Debug.Log("Sumando 5 segundos");
+        //}
     }
 }
