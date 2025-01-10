@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Enemies : MonoBehaviour
 {
@@ -68,9 +69,12 @@ public class Enemies : MonoBehaviour
     }
     public void Loot()
     {
-        Vector2 position = transform.position; //chequea la posicion
+        //Vector2 position = transform.position; //chequea la posicion
         int dropsIndex = Random.Range(0, Drops.Length); //randomiza la loot
-        GameObject loot = Instantiate(Drops[dropsIndex], position, Quaternion.identity); //instancia loot a recolectar
-        this.transform.parent = loot.transform;
+        GameObject loot = Drops[dropsIndex];
+        //this.transform.parent = loot.transform;
+        //Instantiate(loot, position, Quaternion.identity); //instancia loot a recolectar
+        Instantiate(loot, this.gameObject.transform); //instancia loot a recolectar
+        //loot.transform.SetParent(this.gameObject.transform, true);
     }
 }
