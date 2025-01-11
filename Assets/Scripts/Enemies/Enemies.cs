@@ -27,8 +27,9 @@ public class Enemies : MonoBehaviour
     public bool enemyKilled;
     //public static int Kills;
 
-    //[Header("Extra")]
-    //[SerializeField] GameManager gameManager;
+    [Header("Extra")]
+    //[SerializeField]
+    public GameManager gameManager;
 
     void Start()
     {
