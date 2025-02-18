@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using System;
 using UnityEngine.UIElements;
 
 public class Enemies : MonoBehaviour
@@ -28,8 +29,8 @@ public class Enemies : MonoBehaviour
     //public static int Kills;
 
     [Header("Extra")]
-    //[SerializeField]
     public GameManager gameManager;
+    public static event Action OnEnemyKilled;
 
     void Start()
     {
@@ -63,7 +64,9 @@ public class Enemies : MonoBehaviour
             //Destroy(gameObject);
             fx.SetActive(false);
             meshRenderer.enabled = false;
-            SliderTiempo();
+            //GetComponent<GameManager>()?.agregarTiempo_Bool(true);
+            OnEnemyKilled?.Invoke();
+            //SliderTiempo();
             //Spawner.spawneados--;
 
             //MECANICA PARA CONTAR COMBO'???
@@ -74,12 +77,12 @@ public class Enemies : MonoBehaviour
     public void Loot()
     {
         //Vector2 position = transform.position; //chequea la posicion
-        int dropsIndex = Random.Range(0, Drops.Length); //randomiza la loot
+        int dropsIndex = UnityEngine.Random.Range(0, Drops.Length); //randomiza la loot
         GameObject loot = Drops[dropsIndex];
         Instantiate(loot, this.gameObject.transform); //instancia loot a recolectar
         //Instantiate(loot, position, Quaternion.identity);
     }
-
+    /*
     void SliderTiempo()
     {
         //if (GetComponent<GameManager>() != null)
@@ -88,4 +91,5 @@ public class Enemies : MonoBehaviour
         Debug.Log("Sumando 5 segundos");
         //}
     }
+    */
 }

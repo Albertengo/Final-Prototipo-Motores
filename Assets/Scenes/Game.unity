@@ -621,7 +621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &671449189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,7 +636,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text_Coins: {fileID: 1925129115}
   Time_Slider: {fileID: 437228343}
-  Tiempo_Juego: 20
+  TiempoInicial_Juego: 20
+  TiempoPresente_Juego: 0
+  agregarTiempo_Bool: 0
 --- !u!4 &671449190
 Transform:
   m_ObjectHideFlags: 0
@@ -2822,6 +2824,11 @@ PrefabInstance:
       propertyPath: Time_Slider
       value: 
       objectReference: {fileID: 235967246}
+    - target: {fileID: 8317371906684058786, guid: 900aedb5e0323c547a69ec905c682980,
+        type: 3}
+      propertyPath: TiempoInicial_Juego
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 9061802037138588234, guid: 900aedb5e0323c547a69ec905c682980,
         type: 3}
       propertyPath: m_Name

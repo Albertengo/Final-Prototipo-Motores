@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEditor.Timeline.Actions.MenuPriority;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,12 +15,16 @@ public class GameManager : MonoBehaviour
     
     public TextMeshProUGUI Text_Coins;
     public Slider Time_Slider;
-    public int Tiempo_Juego;
+    public float TiempoInicial_Juego = 20f;
+    public float TiempoPresente_Juego;
+    public bool agregarTiempo_Bool; 
     //public Enemies Enemy_Script;
     //bool Permitido_Atacar;
     void Start()
     {
         StartGame();
+
+        StartCoroutine(Cronometro());
     }
 
     void Update()
@@ -37,16 +42,32 @@ public class GameManager : MonoBehaviour
     #region Code
     void StartGame()
     {
-        StartCoroutine(Cronometro(Tiempo_Juego));
+        SliderConfig();
+        Enemies.OnEnemyKilled += AgregarTiempo;// (5f);
+       // StartCoroutine(Cronometro(TiempoInicial_Juego));
     }
 
-    public IEnumerator Cronometro(float valorCronometro)
+    void SliderConfig()
     {
-        Time_Slider.value = valorCronometro;
-        while (Time_Slider.value > 0)
+        TiempoPresente_Juego = TiempoInicial_Juego;
+        Debug.Log("Tiempo presente config a: " + TiempoPresente_Juego);
+        Time_Slider.maxValue = TiempoInicial_Juego;
+        Time_Slider.value = TiempoInicial_Juego;
+    }
+
+    public IEnumerator Cronometro()
+    {
+        //Time_Slider.value = valorCronometro;
+        while (TiempoPresente_Juego > 0)
         {
+            //if (agregarTiempo_Bool == true)
+            //{
+            //    AgregarTiempo(10);
+
+            //}
             yield return new WaitForSeconds(1.0f);
-            Time_Slider.value--;
+            TiempoPresente_Juego--;
+            Time_Slider.value = TiempoPresente_Juego;
         }
      }
 
@@ -57,12 +78,21 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void AgregarTiempo(float tiempoExtra)
+    void AgregarTiempo()//(float tiempoExtra)
     {
-        Time_Slider.value += tiempoExtra;
-        Debug.Log("Tiempo agregado: " + tiempoExtra + " segundos.");
-    }
+        TiempoPresente_Juego += 5f;//tiempoExtra;
 
+        if (TiempoPresente_Juego > Time_Slider.maxValue)
+            TiempoPresente_Juego = Time_Slider.maxValue; // Limitar al máximo del slider
+        Time_Slider.value = TiempoPresente_Juego;
+
+        Debug.Log("Tiempo agregado: 5 segundos.");
+        //Debug.Log("Tiempo agregado: " + tiempoExtra + " segundos.");
+    }
+    public void BoolTiempo()
+    {
+        //para activar el bool de tiempo y accederlo desde el script de enemies??
+    }
     #endregion
 }
 
