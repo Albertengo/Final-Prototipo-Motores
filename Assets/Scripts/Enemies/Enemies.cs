@@ -8,9 +8,7 @@ using UnityEngine.UIElements;
 
 public class Enemies : MonoBehaviour
 {
-    //NOTA: hacer que la loot sea hijo del enemy para que siga moviendose despues de que se muera el enemigo y no se quede en el piso nomas
-    // (para dar la ilusion de que el personaje se sigue moviendo y no está estático)
-    //NOTA2: usar el trigger dentro del prefab enemigo para que colisione con el player y sacarle vida si el player no llega a matarlo
+    //NOTA: usar el trigger dentro del prefab enemigo para que colisione con el player y sacarle vida si el player no llega a matarlo
 
     [Header("Enemy properties")]
     public int Life = 1;
@@ -64,10 +62,7 @@ public class Enemies : MonoBehaviour
             //Destroy(gameObject);
             fx.SetActive(false);
             meshRenderer.enabled = false;
-            //GetComponent<GameManager>()?.agregarTiempo_Bool(true);
-            OnEnemyKilled?.Invoke();
-            //SliderTiempo();
-            //Spawner.spawneados--;
+            OnEnemyKilled?.Invoke(); //para invocar el agregar tiempo en el slider
 
             //MECANICA PARA CONTAR COMBO'???
             Loot();
@@ -82,14 +77,4 @@ public class Enemies : MonoBehaviour
         Instantiate(loot, this.gameObject.transform); //instancia loot a recolectar
         //Instantiate(loot, position, Quaternion.identity);
     }
-    /*
-    void SliderTiempo()
-    {
-        //if (GetComponent<GameManager>() != null)
-        //{
-            GetComponent<GameManager>()?.AgregarTiempo(5);
-        Debug.Log("Sumando 5 segundos");
-        //}
-    }
-    */
 }

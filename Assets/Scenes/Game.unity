@@ -634,11 +634,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977e42edb88b0d54a8c9a687a5dcae0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text_Coins: {fileID: 1925129115}
-  Time_Slider: {fileID: 437228343}
   TiempoInicial_Juego: 20
   TiempoPresente_Juego: 0
-  agregarTiempo_Bool: 0
+  TiempoExtra: 3
+  Text_Coins: {fileID: 1925129115}
+  Time_Slider: {fileID: 437228343}
 --- !u!4 &671449190
 Transform:
   m_ObjectHideFlags: 0
