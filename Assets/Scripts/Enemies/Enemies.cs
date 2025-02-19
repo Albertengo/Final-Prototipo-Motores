@@ -29,6 +29,8 @@ public class Enemies : MonoBehaviour
     [Header("Extra")]
     public GameManager gameManager;
     public static event Action OnEnemyKilled;
+    public static event Action OnPlayerCollision;
+    bool colisionando;
 
     void Start()
     {
@@ -40,6 +42,7 @@ public class Enemies : MonoBehaviour
     {
         movement();
         Destroy();
+        //colisionando = false;
     }
     void movement()
     {
@@ -76,5 +79,23 @@ public class Enemies : MonoBehaviour
         GameObject loot = Drops[dropsIndex];
         Instantiate(loot, this.gameObject.transform); //instancia loot a recolectar
         //Instantiate(loot, position, Quaternion.identity);
+    }
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if (colisionando) return; //para asegurar que no colisione varias veces seguidas
+            colisionando = true;
+
+            if (colisionando == true)
+            OnPlayerCollision?.Invoke();
+            StartCoroutine(Reset());
+        }
+    }
+
+    IEnumerator Reset()
+    {
+        yield return new WaitForEndOfFrame();
+        colisionando = false;
     }
 }

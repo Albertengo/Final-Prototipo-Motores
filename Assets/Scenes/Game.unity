@@ -621,7 +621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &671449189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1317,9 +1317,9 @@ GameObject:
   - component: {fileID: 1312657639}
   - component: {fileID: 1312657638}
   - component: {fileID: 1312657637}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: DetectionTrigger
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1358,8 +1358,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.34789315, y: 1, z: 1}
+  m_Center: {x: -0.32605132, y: 0, z: 0}
 --- !u!23 &1312657638
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2819,6 +2819,11 @@ PrefabInstance:
       propertyPath: Text_Coins
       value: 
       objectReference: {fileID: 141357407}
+    - target: {fileID: 8317371906684058786, guid: 900aedb5e0323c547a69ec905c682980,
+        type: 3}
+      propertyPath: TiempoExtra
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8317371906684058786, guid: 900aedb5e0323c547a69ec905c682980,
         type: 3}
       propertyPath: Time_Slider
