@@ -45,7 +45,8 @@ public class GameManager : MonoBehaviour
     {
         SliderConfig();
         Enemies.OnEnemyKilled += AgregarTiempo;// (5f);
-        Enemies.OnPlayerCollision += SacarTiempo;
+        //Enemies.OnPlayerCollision += SacarTiempo;
+        PlayerMov.OnEnemyCollision += SacarTiempo;
     }
 
     void SliderConfig()
@@ -72,7 +73,7 @@ public class GameManager : MonoBehaviour
         TiempoPresente_Juego -= TiempoExtra;
 
         if (TiempoPresente_Juego < Time_Slider.minValue)
-            TiempoPresente_Juego = Time_Slider.minValue; // Limitar al máximo del slider
+            TiempoPresente_Juego = Time_Slider.minValue; // Limitar al mínimo del slider
         Time_Slider.value = TiempoPresente_Juego;
     }
 

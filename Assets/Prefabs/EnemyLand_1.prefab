@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4244078361193205365}
   - component: {fileID: 738477834281215409}
   - component: {fileID: 8057581424502737012}
+  - component: {fileID: 5432114454729617290}
   m_Layer: 6
   m_Name: SFX
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +100,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 265101829206994144, guid: 1793219d874ffd94b9ae52945e67f08d,
     type: 3}
+--- !u!65 &5432114454729617290
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604029681924709933}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.5635636, z: 1}
+  m_Center: {x: 0, y: 0.010035515, z: 0}
 --- !u!1 &4306894486554839170
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +192,7 @@ GameObject:
   - component: {fileID: 8290947703195543229}
   m_Layer: 6
   m_Name: EnemyLand_1
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

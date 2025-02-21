@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,6 +15,11 @@ public class PlayerMov : MonoBehaviour
     public bool isGrounded;
 
     public static int Coins;
+
+    //
+    public static event Action OnEnemyCollision;
+    bool colisionando;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -43,8 +49,6 @@ public class PlayerMov : MonoBehaviour
             //Debug.Log("Estas en el piso");
         }
 
-        
-
         movement.Normalize();
 
         transform.Translate(movement * Time.deltaTime * speed); //para moverse segun el player
@@ -65,5 +69,20 @@ public class PlayerMov : MonoBehaviour
             Debug.Log("MONEDA RECOGIDA");
             Coins++;
         }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            if (colisionando) return; //para asegurar que no colisione varias veces seguidas
+            colisionando = true;
+
+            //if (colisionando == true)
+            OnEnemyCollision?.Invoke();
+            StartCoroutine(Reset());
+        }
+    }
+
+    IEnumerator Reset()
+    {
+        yield return new WaitForEndOfFrame();
+        colisionando = false;
     }
 }

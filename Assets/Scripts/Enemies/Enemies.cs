@@ -9,6 +9,8 @@ using UnityEngine.UIElements;
 public class Enemies : MonoBehaviour
 {
     //NOTA: usar el trigger dentro del prefab enemigo para que colisione con el player y sacarle vida si el player no llega a matarlo
+    //NOTA2: hay bugs, se generan 2 loots en el mismo lugar en vez de una sola y cuando colisiona con el player saca 3 veces la vida
+    //capaz se puede arreglar poniendo el codigo del trigger y eso dentro del player en vez de en el enemigo (ya lo hice y funcionó!!!)
 
     [Header("Enemy properties")]
     public int Life = 1;
@@ -29,8 +31,8 @@ public class Enemies : MonoBehaviour
     [Header("Extra")]
     public GameManager gameManager;
     public static event Action OnEnemyKilled;
-    public static event Action OnPlayerCollision;
-    bool colisionando;
+    //public static event Action OnPlayerCollision;
+    //bool colisionando;
 
     void Start()
     {
@@ -79,23 +81,5 @@ public class Enemies : MonoBehaviour
         GameObject loot = Drops[dropsIndex];
         Instantiate(loot, this.gameObject.transform); //instancia loot a recolectar
         //Instantiate(loot, position, Quaternion.identity);
-    }
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            if (colisionando) return; //para asegurar que no colisione varias veces seguidas
-            colisionando = true;
-
-            if (colisionando == true)
-            OnPlayerCollision?.Invoke();
-            StartCoroutine(Reset());
-        }
-    }
-
-    IEnumerator Reset()
-    {
-        yield return new WaitForEndOfFrame();
-        colisionando = false;
     }
 }
