@@ -6,10 +6,10 @@ public class Loot : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) //("" + "Coin"))
+        if (other.CompareTag("Player"))
         {
             Destroy(this.gameObject);
-            Debug.Log("MONEDA RECOGIDA");
+            //Debug.Log("MONEDA RECOGIDA");
         }
     }
 }

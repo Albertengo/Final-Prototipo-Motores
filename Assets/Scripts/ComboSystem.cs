@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ComboSystem : MonoBehaviour
 {
+    //NOTA: maybe hacer un unity event "AddCombo" para poder invocar countingCombo() desde el enemy script?
+
     public TextMeshProUGUI Text_Combo;
     float ComboTimeLimit = 3f;
     float ComboTimer;
