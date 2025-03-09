@@ -11,6 +11,7 @@ public class ComboSystem : MonoBehaviour
     float ComboTimeLimit = 3f;
     float ComboTimer;
     int ComboCount;
+    int maxCombo;
 
     #region funciones básicos
     void Start()
@@ -44,6 +45,12 @@ public class ComboSystem : MonoBehaviour
     {
         ComboCount++;
         ComboTimer = ComboTimeLimit;
+
+        if (ComboCount > maxCombo)
+        {
+            maxCombo = ComboCount;
+            PlayerPrefs.SetInt("MaxCombo", maxCombo); // Guarda el máximo combo
+        }
     }
 
     private void ResetCombo()

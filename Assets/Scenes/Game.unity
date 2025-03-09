@@ -636,8 +636,8 @@ MonoBehaviour:
   TiempoInicial_Juego: 20
   TiempoPresente_Juego: 0
   TiempoExtra: 3
-  Text_Coins: {fileID: 1925129115}
   Time_Slider: {fileID: 437228343}
+  Text_Coins: {fileID: 0}
 --- !u!4 &671449190
 Transform:
   m_ObjectHideFlags: 0

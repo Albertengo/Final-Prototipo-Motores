@@ -16,11 +16,12 @@ public class GameManager : MonoBehaviour
     public float TiempoExtra = 5f;
 
     [Header("Referencias")]
-    public TextMeshProUGUI Text_Coins;
     public Slider Time_Slider;
-    
-    //public Enemies Enemy_Script;
-    //bool Permitido_Atacar;
+
+    public TextMeshProUGUI Text_Coins;
+
+        //public Enemies Enemy_Script;
+        //bool Permitido_Atacar;
     void Start()
     {
         StartingGame();
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        Text_Coins.text = "Coins: " + PlayerMov.Coins;
+        Text_Coins.text = "Coins: " + Coins.coins;
 
         if (Time_Slider.value == 0) //si el tiempo llega a 0, gameover.
         {

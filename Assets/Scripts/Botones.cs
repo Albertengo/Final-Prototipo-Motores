@@ -12,9 +12,9 @@ namespace interfaz
         //lógica para los botones usados dentro del juego
         public void Restart()
         {
+            PlayerPrefs.SetInt("MaxCombo", 0);
+            PlayerPrefs.SetInt("Coins", 0);
             SceneManager.LoadScene("Game");
-            //Enemies.Kills = 0;
-            //ControlJuego.CantidadEnemigos = 0;
             Time.timeScale = 1f;
         }
         public void Menu()
@@ -23,9 +23,9 @@ namespace interfaz
         }
         public void PlayButton()
         {
+            PlayerPrefs.SetInt("MaxCombo", 0);
+            PlayerPrefs.SetInt("Coins", 0);
             SceneManager.LoadScene("Game");
-            //Enemies.Kills = 0;
-            //ControlJuego.CantidadEnemigos = 0;
             Time.timeScale = 1f;
         }
         public void QuitGame()

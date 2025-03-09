@@ -64,12 +64,14 @@ public class PlayerMov : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        /*
         if (other.CompareTag("" + "Coin")) //("" + "Coin"))
         {
             Debug.Log("MONEDA RECOGIDA");
             Coins++;
             Debug.Log("CANTIDAD: " + Coins);
         }
+        */
         if (other.gameObject.CompareTag("Enemy"))
         {
             if (colisionando) return; //para asegurar que no colisione varias veces seguidas
