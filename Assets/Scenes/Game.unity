@@ -394,7 +394,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies: []
   SpawnPosition: {fileID: 405353764}
-  "l\xEDmiteEnemigos": 1
   TArranque: 4
   Repeticion: 5
 --- !u!1 &410087039
@@ -1000,7 +999,6 @@ MonoBehaviour:
   enemies:
   - {fileID: 5700019228873366842, guid: f0d20ba4d3d25d244af476c046370873, type: 3}
   SpawnPosition: {fileID: 958301296}
-  "l\xEDmiteEnemigos": 3
   TArranque: 2
   Repeticion: 3
 --- !u!1 &1001457537
