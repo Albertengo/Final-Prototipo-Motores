@@ -12,17 +12,23 @@ public class ComboSystem : MonoBehaviour
     float ComboTimer;
     int ComboCount;
 
-
+    #region funciones básicos
     void Start()
     {
-        TimeLimitCombo();
+        
+        Enemies.AddCombo += CountingCombo;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Text_Combo.text = ComboCount + " Combo!";
+        TimeLimitCombo();
+
+        ActualizarTexto();
     }
+    #endregion
+
+    #region Code
     void TimeLimitCombo()
     {
         if (ComboCount > 0)
@@ -45,4 +51,16 @@ public class ComboSystem : MonoBehaviour
         ComboCount = 0;
         ComboTimer = 0f;
     }
+
+    private void ActualizarTexto()
+    {
+        if (ComboCount > 0)
+        {
+            Text_Combo.enabled = true;
+            Text_Combo.text = ComboCount + " Combo!";
+        }
+        else
+            Text_Combo.enabled = false;
+    }
+    #endregion
 }

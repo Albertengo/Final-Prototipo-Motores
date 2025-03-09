@@ -5,6 +5,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using System;
 using UnityEngine.UIElements;
+using Unity.VisualScripting;
 
 public class Enemies : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class Enemies : MonoBehaviour
     [Header("Extra")]
     public GameManager gameManager;
     public static event Action OnEnemyKilled;
+    public static event Action AddCombo;
     //public static event Action OnPlayerCollision;
     //bool colisionando;
 
@@ -76,7 +78,8 @@ public class Enemies : MonoBehaviour
             //MECANICA PARA CONTAR COMBO'???
             Loot();
             enemyKilled = true;
-            Invoke(ComboSystem.CountingCombo());
+            AddCombo?.Invoke();
+            //Invoke(ComboSystem.CountingCombo());
         }
     }
     public void Loot()
