@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3687538504144246984
 Transform:
   m_ObjectHideFlags: 0
@@ -307,8 +307,9 @@ MonoBehaviour:
   speed: 3
   fx: {fileID: 604029681924709933}
   meshRenderer: {fileID: 5259079527268656879}
+  collider_Enemy: {fileID: 8290947703195543229}
   Tvivo: 0
-  TMAXvida: 20
+  TMAXvida: 12
   Drops:
   - {fileID: 4740321602149259397, guid: 146ecd45828b24544a44b6e719b432b8, type: 3}
   enemyKilled: 0

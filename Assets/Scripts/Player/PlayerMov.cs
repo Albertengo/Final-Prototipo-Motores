@@ -68,13 +68,13 @@ public class PlayerMov : MonoBehaviour
         {
             Debug.Log("MONEDA RECOGIDA");
             Coins++;
+            Debug.Log("CANTIDAD: " + Coins);
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
             if (colisionando) return; //para asegurar que no colisione varias veces seguidas
             colisionando = true;
 
-            //if (colisionando == true)
             OnEnemyCollision?.Invoke();
             StartCoroutine(Reset());
         }

@@ -8,7 +8,6 @@ namespace enemies
     {
         public GameObject[] enemies;
         public Transform SpawnPosition;
-        public int límiteEnemigos;
         public float TArranque;
         public float Repeticion;
         public static int spawneados;
@@ -32,20 +31,10 @@ namespace enemies
         //}
         void SpawnObjetos()
         {
-            if (spawneados < límiteEnemigos)
-            {
                 int RandomIndex = Random.Range(0, enemies.Length);
                 GameObject RandomEnemy = enemies[RandomIndex];
                 Instantiate(RandomEnemy, SpawnPosition.position, RandomEnemy.transform.rotation);
                 spawneados++;
-            }
-            else
-                CancelInvoke("SpawnObjetos");
-            
         }
-        //IEnumerator SpawnEnemigos()
-        //{
-            
-        //}
     }
 }

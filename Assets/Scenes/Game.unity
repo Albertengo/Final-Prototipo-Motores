@@ -396,7 +396,7 @@ MonoBehaviour:
   SpawnPosition: {fileID: 405353764}
   "l\xEDmiteEnemigos": 1
   TArranque: 4
-  Repeticion: 1
+  Repeticion: 5
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,8 +1333,8 @@ Transform:
   m_GameObject: {fileID: 1312657635}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: 0.47, z: 0}
-  m_LocalScale: {x: 1.9035071, y: 4.1891775, z: 5.3323}
+  m_LocalPosition: {x: 0.030089, y: 0.41, z: 0}
+  m_LocalScale: {x: 1.8081604, y: 0.8292695, z: 5.3323}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1426367809}

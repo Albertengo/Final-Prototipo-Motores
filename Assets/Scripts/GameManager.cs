@@ -9,8 +9,6 @@ using static UnityEditor.Timeline.Actions.MenuPriority;
 
 public class GameManager : MonoBehaviour
 {
-    //NOTA: agregar una mecanica de agregar tiempo cada vez que muere un enemigo y si no agregar directamente vidas...
-
     //public UnityEvent AttackOnClick;
     [Header("Tiempo Mecánica")]
     public float TiempoInicial_Juego = 20f;
