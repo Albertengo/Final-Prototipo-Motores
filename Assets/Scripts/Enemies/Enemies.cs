@@ -76,6 +76,7 @@ public class Enemies : MonoBehaviour
             //MECANICA PARA CONTAR COMBO'???
             Loot();
             enemyKilled = true;
+            Invoke(ComboSystem.CountingCombo());
         }
     }
     public void Loot()
