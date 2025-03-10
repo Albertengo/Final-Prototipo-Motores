@@ -9,17 +9,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
-    //NOTA: capaz agregar un cooldown?
 
     public LayerMask Enemies_Layer;
     [SerializeField] InputActionReference Attack_Input;
     public DetectionRange Detection;
+    public Animator Animator;
+    //EndAttack Attacking;
 
-    Renderer _renderer;
-    Material Material;
-    //particle system?
-    //combo system ?
-    
     void Start()
     {
         Attack_Input.action.performed += Attack;
@@ -27,19 +23,22 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        _renderer = GetComponent<Renderer>();
-        Material = GetComponent<Material>();
-
-        //Material.mainTextureOffset = Vector3.zero;
-        //_renderer.material.mainTexture.
+        if (EndAttack.Attacking == false)
+            ActualizarAnimacion();
     }
 
     private void Attack(InputAction.CallbackContext obj)
     {
-        Debug.Log("Attacking");
-        //GetComponent<DetectionRange>().EnemyDetected();
         Detection.EnemyDetected();
-        //código de ataque c/ particle system
+        //Animator.SetBool("IsAttacking", true);
+        Animator.Play("Attack");
+        EndAttack.Attacking = true;
     }
 
+    void ActualizarAnimacion()
+    {
+        Animator.Play("Running");
+    }
+
+    
 }
