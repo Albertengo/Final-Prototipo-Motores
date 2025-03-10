@@ -1,18 +1,9 @@
 using enemies;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using System;
-using UnityEngine.UIElements;
-using Unity.VisualScripting;
 
 public class Enemies : MonoBehaviour
 {
-    //NOTA: usar el trigger dentro del prefab enemigo para que colisione con el player y sacarle vida si el player no llega a matarlo
-    //NOTA2: hay un bug, se generan 2 loots en el mismo lugar en vez de una sola 
-    //NOTA3: EL PROBLEMA ES EL COLLIDER, DESACTIVARLO!!
-
     [Header("Enemy properties")]
     public int Life = 1;
     [SerializeField] float speed;
@@ -28,26 +19,17 @@ public class Enemies : MonoBehaviour
     [Header("Enemy Loot")]
     public GameObject[] Drops;
     public bool enemyKilled;
-    //public static int Kills;
 
     [Header("Extra")]
     public GameManager gameManager;
     public static event Action OnEnemyKilled;
     public static event Action AddCombo;
-    //public static event Action OnPlayerCollision;
-    //bool colisionando;
-
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
         movement();
         Destroy();
-        //colisionando = false;
     }
     void movement()
     {
@@ -68,26 +50,21 @@ public class Enemies : MonoBehaviour
         Life = Life - 1;//daño;
         if (Life <= 0)
         {
-            //Destroy(gameObject);
             fx.SetActive(false);
             meshRenderer.enabled = false;
             collider_Enemy.enabled = false;
             
             OnEnemyKilled?.Invoke(); //para invocar el agregar tiempo en el slider
 
-            //MECANICA PARA CONTAR COMBO'???
             Loot();
             enemyKilled = true;
             AddCombo?.Invoke();
-            //Invoke(ComboSystem.CountingCombo());
         }
     }
     public void Loot()
     {
-        //Vector2 position = transform.position; //chequea la posicion
         int dropsIndex = UnityEngine.Random.Range(0, Drops.Length); //randomiza la loot
         GameObject loot = Drops[dropsIndex];
         Instantiate(loot, this.gameObject.transform); //instancia loot a recolectar
-        //Instantiate(loot, position, Quaternion.identity);
     }
 }

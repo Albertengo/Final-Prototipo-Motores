@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace enemies
@@ -17,18 +15,6 @@ namespace enemies
             InvokeRepeating("SpawnObjetos", TArranque, Repeticion);
         }
 
-        private void Update()
-        {
-
-        }
-        //void InvokeSpawn()
-        //{
-        //    //SpawnEnemigos();
-        //    while (spawneados < 3)
-        //    {
-        //        InvokeRepeating("SpawnObjetos", TArranque, Repeticion);
-        //    }
-        //}
         void SpawnObjetos()
         {
                 int RandomIndex = Random.Range(0, enemies.Length);

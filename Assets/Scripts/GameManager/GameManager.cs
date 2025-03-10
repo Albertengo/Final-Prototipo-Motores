@@ -1,15 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEditor.Timeline.Actions.MenuPriority;
 
 public class GameManager : MonoBehaviour
 {
-    //public UnityEvent AttackOnClick;
     [Header("Tiempo Mecánica")]
     public float TiempoInicial_Juego = 20f;
     public float TiempoPresente_Juego;
@@ -20,8 +16,6 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI Text_Coins;
 
-        //public Enemies Enemy_Script;
-        //bool Permitido_Atacar;
     void Start()
     {
         StartingGame();
@@ -31,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        Text_Coins.text = "Coins: " + Coins.coins;
+        Text_Coins.text = "Objectives completed: " + Coins.coins;
 
         if (Time_Slider.value == 0) //si el tiempo llega a 0, gameover.
         {
@@ -51,7 +45,6 @@ public class GameManager : MonoBehaviour
     void SliderConfig()
     {
         TiempoPresente_Juego = TiempoInicial_Juego;
-        //Debug.Log("Tiempo presente config a: " + TiempoPresente_Juego);
         Time_Slider.maxValue = TiempoInicial_Juego;
         Time_Slider.value = TiempoInicial_Juego;
     }

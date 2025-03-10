@@ -6,17 +6,12 @@ using UnityEngine.Events;
 
 public class PlayerMov : MonoBehaviour
 {
-    //NOTA: PLAYER NO SE MUEVE, se queda en el lugar mientras el mapa se mueve a su alrededor.
-
     [SerializeField] private Rigidbody rb;
     [SerializeField] private int speed;
 
     public float jumpHeight = 1.0f;
     public bool isGrounded;
 
-    public static int Coins;
-
-    //
     public static event Action OnEnemyCollision;
     bool colisionando;
     
@@ -33,8 +28,6 @@ public class PlayerMov : MonoBehaviour
 
     private void Movement()
     {
-        //float horizontalInput = Input.GetAxis("Horizontal");
-        //float verticalInput = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(0f, 0f, 0f); // verticalInput);
 
         if (isGrounded == true) //mientras estes en el piso, se podra saltar, es para evitar volar
@@ -64,14 +57,6 @@ public class PlayerMov : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        /*
-        if (other.CompareTag("" + "Coin")) //("" + "Coin"))
-        {
-            Debug.Log("MONEDA RECOGIDA");
-            Coins++;
-            Debug.Log("CANTIDAD: " + Coins);
-        }
-        */
         if (other.gameObject.CompareTag("Enemy"))
         {
             if (colisionando) return; //para asegurar que no colisione varias veces seguidas

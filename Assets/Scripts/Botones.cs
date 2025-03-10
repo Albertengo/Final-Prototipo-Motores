@@ -1,7 +1,3 @@
-//using BotsEnemigos;
-//using Jugador;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +6,7 @@ namespace interfaz
     public class Botones : MonoBehaviour
     {
         //lógica para los botones usados dentro del juego
+        [SerializeField] GameObject PanelCreditos;
         public void Menu()
         {
             SceneManager.LoadScene("Menu");
@@ -29,6 +26,10 @@ namespace interfaz
         {
             Debug.Log("Saliste.");
             Application.Quit();
+        }
+        public void Credits()
+        {
+            PanelCreditos.SetActive(true);
         }
     }
 }
