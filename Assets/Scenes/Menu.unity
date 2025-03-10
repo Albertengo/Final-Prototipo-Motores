@@ -227,8 +227,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12.156}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -143.01273, y: -18.834589}
-  m_SizeDelta: {x: 218.3335, y: 73.5291}
+  m_AnchoredPosition: {x: -99.22479, y: -9.402194}
+  m_SizeDelta: {x: 286.2934, y: 73.5291}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &143261902
 MonoBehaviour:
@@ -276,7 +276,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1345974091}
         m_TargetAssemblyTypeName: interfaz.Botones, Assembly-CSharp
-        m_MethodName: PlayButton
+        m_MethodName: Tutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1551,7 +1551,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Practice
+  m_text: Reminder
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d52d97c6aa3939349b9dc8bc1508ca22, type: 2}
   m_sharedMaterial: {fileID: 6874232510763902226, guid: d52d97c6aa3939349b9dc8bc1508ca22,

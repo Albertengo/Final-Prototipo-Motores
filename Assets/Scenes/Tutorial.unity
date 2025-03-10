@@ -225,7 +225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 13, y: 0}
+  m_AnchoredPosition: {x: -5, y: -0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42538481
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Try to focus again!
+  m_text: Refocus on the list
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d52d97c6aa3939349b9dc8bc1508ca22, type: 2}
   m_sharedMaterial: {fileID: 6874232510763902226, guid: d52d97c6aa3939349b9dc8bc1508ca22,
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 3.91
@@ -530,8 +530,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279045451
-  m_fontColor: {r: 0.29411766, g: 0.050980397, b: 0.050980397, a: 1}
+    rgba: 3126804629
+  m_fontColor: {r: 0.58431375, g: 0.2509804, b: 0.37254903, a: 0.7294118}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1344,7 +1344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.46}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 714, y: -347}
+  m_AnchoredPosition: {x: 715, y: -352}
   m_SizeDelta: {x: 357.2668, y: 141.0919}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1983339747
@@ -1368,8 +1368,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.8588236, g: 0.43137258, b: 0.5058824, a: 1}
-    m_HighlightedColor: {r: 0.8588236, g: 0.43137258, b: 0.5058824, a: 1}
+    m_NormalColor: {r: 0.8235295, g: 0.36078432, b: 0.43921572, a: 0}
+    m_HighlightedColor: {r: 0.8235295, g: 0.36078432, b: 0.43921572, a: 1}
     m_PressedColor: {r: 0.64705884, g: 0.24705884, b: 0.3254902, a: 1}
     m_SelectedColor: {r: 0.86274517, g: 0.43137258, b: 0.5058824, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
