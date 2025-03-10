@@ -10,13 +10,6 @@ namespace interfaz
     public class Botones : MonoBehaviour
     {
         //lógica para los botones usados dentro del juego
-        public void Restart()
-        {
-            PlayerPrefs.SetInt("MaxCombo", 0);
-            PlayerPrefs.SetInt("Coins", 0);
-            SceneManager.LoadScene("Game");
-            Time.timeScale = 1f;
-        }
         public void Menu()
         {
             SceneManager.LoadScene("Menu");
@@ -27,6 +20,10 @@ namespace interfaz
             PlayerPrefs.SetInt("Coins", 0);
             SceneManager.LoadScene("Game");
             Time.timeScale = 1f;
+        }
+        public void Tutorial()
+        {
+            SceneManager.LoadScene("Tutorial");
         }
         public void QuitGame()
         {
